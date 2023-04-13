@@ -18,16 +18,15 @@ def ValuePredictor(to_predict_list):
     predict = loaded_model.predict(to_predict)
     return predict[0]
 
-
-
 @app.route('/')
 def home():
-    return render_template('emp.html')
+    return render_template('home.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
-    
+    if request.method == 'GET':
+        return render_template("emp.html")
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
         to_predict_list = list(to_predict_list.values())
@@ -35,7 +34,7 @@ def predict():
         predict = ValuePredictor(to_predict_list)       
         if int(predict)== 0:
             prediction ='Employee Will Not Leave!'
-        if int(predict)<0.5:
+        elif int(predict)<=0.5:
             prediction ='Probability of Employee leaving is Low!'    
         else:
             prediction ='Employee Might Leave!'

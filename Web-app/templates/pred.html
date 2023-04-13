@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Prediction</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+      .container {
+        max-width: 900px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        text-align: center;
+      }
+      body{
+        background-color: rgb(255, 255, 255);
+        font-family: 'Noto Serif', serif;
+      }
+      h2{
+        color: rgb(48, 48, 48);
+      }
+      h4{
+        color: rgb(0, 135, 54);
+        font-weight: 600;
+      }
+      #pred{
+        margin-top: 30px;
+      }
+      .pred-content{
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        background-color: antiquewhite;
+        border-radius: 15px;
+        background: #ededed;
+box-shadow:  5px 5px 4px #d1d1d1,
+             -5px -5px 4px #ffffff;
+      }
+
+      .feature{
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 15px;
+        background: #ededed;
+box-shadow:  5px 5px 4px #d1d1d1,
+             -5px -5px 4px #ffffff;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a href="/"><h2 class="navbar-brand ml-2" style="color:rgb(0, 135, 54)">Employee Attritation</h2></a>
+  </nav>
+    
+  <div class="container">
+    <div class="pred-content">
+      <h2>Prediction</h2>
+      <div id="pred" class="text-center">
+      <h4>{{prediction}}</h4>
+      </div>
+    </div>
+
+    <div class="feature">
+      <h2>Feature Importance</h2>
+      <img src="{{url_for('static', filename='feature.png')}}" alt="" height="500">
+    </div>
+    
+  
+    
+  </div>
+        
+</body>
+</html>
